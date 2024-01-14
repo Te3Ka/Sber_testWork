@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы.">
+    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="class Decorator&#10;Создан класс Decorator и несколько методов для написания текста в консоль на русском языке.&#10;&#10;Также итератор перенемён в отдельный класс Iterator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" afterDir="false" />
     </list>
@@ -67,12 +67,21 @@
       <option name="project" value="LOCAL" />
       <updated>1705224168470</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="class Decorator&#10;Создан класс Decorator и несколько методов для написания текста в консоль на русском языке.&#10;&#10;Также итератор перенемён в отдельный класс Iterator">
+      <option name="closed" value="true" />
+      <created>1705225211706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705225211706</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлено описание задания в README.md.&#10;&#10;Удалён стартовый код из Main.java" />
     <MESSAGE value="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы." />
-    <option name="LAST_COMMIT_MESSAGE" value="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы." />
+    <MESSAGE value="class Decorator&#10;Создан класс Decorator и несколько методов для написания текста в консоль на русском языке.&#10;&#10;Также итератор перенемён в отдельный класс Iterator" />
+    <option name="LAST_COMMIT_MESSAGE" value="class Decorator&#10;Создан класс Decorator и несколько методов для написания текста в консоль на русском языке.&#10;&#10;Также итератор перенемён в отдельный класс Iterator" />
   </component>
 </project>
