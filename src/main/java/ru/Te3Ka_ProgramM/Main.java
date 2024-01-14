@@ -1,5 +1,6 @@
 package ru.Te3Ka_ProgramM;
 
+import java.io.*;
 import java.util.Scanner;
 
 //***********************//
@@ -8,17 +9,17 @@ import java.util.Scanner;
 //***********************//
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Decorator decorator = new Decorator();
         Iterator iterator = new Iterator();
         Logic logic = new Logic();
 
-        // decorator.startProgram();
+        decorator.startProgram();
 
         logic.loadIterator(iterator);
         logic.mainMenu(iterator, decorator);
 
-        // decorator.author();
+        decorator.author();
     }
 }
 
@@ -61,11 +62,14 @@ class Decorator {
     }
 }
 
-class Logic {
+class Logic implements Serializable {
+    private final long serialVersionUID = 1L;
+    final String FILE_PATH = "iter.ser";
+
     // Константы команд для управления программой через консоль.
-    String PLUS_ITERATOR = "/inc";
-    String RESET_ITERATOR = "/reset";
-    String STOP_ITERATOR = "/stop";
+    final String PLUS_ITERATOR = "/inc";
+    final String RESET_ITERATOR = "/reset";
+    final String STOP_ITERATOR = "/stop";
 
     /**
      * Основной метод управления программой.
@@ -75,15 +79,16 @@ class Logic {
      * @param iterator - счётчик
      * @param decorator - класс декоратора, для отображения текста в консоли.
      */
-    void mainMenu(Iterator iterator, Decorator decorator) {
+    void mainMenu(Iterator iterator, Decorator decorator) throws IOException {
         Scanner scanner = new Scanner(System.in);
         String userInput = "";
 
-        while (!userInput.equals(STOP_ITERATOR)) {
-            System.out.print("Нажмите Enter для продолжения.");
+        while (true) {
+            System.out.println("Нажмите Enter для продолжения.");
             scanner.nextLine();
             decorator.showCommandsMenu();
             userInput = scanner.nextLine();
+
 
             if (userInput.equals(PLUS_ITERATOR))
                 plusIterator(iterator);
@@ -91,6 +96,7 @@ class Logic {
                 resetIterator(iterator);
             else if (userInput.equals(STOP_ITERATOR)) {
                 decorator.showIterator(iterator);
+                saveIterator(iterator);
                 System.out.println("Завершаю работу");
                 return;
             } else
@@ -105,9 +111,26 @@ class Logic {
      * Пока заглушка.
      * @param iterator - счётчик
      */
-    void loadIterator(Iterator iterator) {
-        iterator.setIterator(13);
-        System.out.println("Счётчик загружен, значение " + iterator.getIterator());
+    void loadIterator(Iterator iterator) throws IOException, ClassNotFoundException {
+        FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+        iterator.setIterator((Integer) objectInputStream.readObject());
+
+        System.out.println("Счётчик загружен, значение: " + iterator.getIterator());
+    }
+
+    /**
+     * Метод сохранения значения счётчика в файл.
+     * Пока заглушка.
+     * @param iterator - счётчик
+     */
+    void saveIterator(Iterator iterator) throws IOException {
+        FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+        objectOutputStream.writeObject(iterator.getIterator());
+        objectOutputStream.close();
     }
 
     void plusIterator(Iterator iterator) {
@@ -119,6 +142,9 @@ class Logic {
     }
 }
 
+/**
+ * Класс счётчика, с которым ведётся основная работа программы.
+ */
 class Iterator {
     private int iterator = 0;
 
