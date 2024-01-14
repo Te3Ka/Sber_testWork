@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="Main Menu program and Logic classes&#10;Добавлено текстовое меню программы.&#10;Сделана логика увеличения счётчика.&#10;Сделан сброс счётичка.&#10;Сделан выход из программы.">
+    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="iter.ser&#10;Сам файл итератора">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iter.ser" beforeDir="false" afterPath="$PROJECT_DIR$/iter.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +84,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705227289015</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Save and Load iterator&#10;Добавлены сохранение и загрузка итератора.">
+      <option name="closed" value="true" />
+      <created>1705228980862</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705228980862</updated>
+    </task>
+    <task id="LOCAL-00006" summary="iter.ser&#10;Сам файл итератора">
+      <option name="closed" value="true" />
+      <created>1705229005517</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705229005517</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -91,6 +108,8 @@
     <MESSAGE value="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы." />
     <MESSAGE value="class Decorator&#10;Создан класс Decorator и несколько методов для написания текста в консоль на русском языке.&#10;&#10;Также итератор перенемён в отдельный класс Iterator" />
     <MESSAGE value="Main Menu program and Logic classes&#10;Добавлено текстовое меню программы.&#10;Сделана логика увеличения счётчика.&#10;Сделан сброс счётичка.&#10;Сделан выход из программы." />
-    <option name="LAST_COMMIT_MESSAGE" value="Main Menu program and Logic classes&#10;Добавлено текстовое меню программы.&#10;Сделана логика увеличения счётчика.&#10;Сделан сброс счётичка.&#10;Сделан выход из программы." />
+    <MESSAGE value="Save and Load iterator&#10;Добавлены сохранение и загрузка итератора." />
+    <MESSAGE value="iter.ser&#10;Сам файл итератора" />
+    <option name="LAST_COMMIT_MESSAGE" value="iter.ser&#10;Сам файл итератора" />
   </component>
 </project>

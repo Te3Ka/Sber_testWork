@@ -24,6 +24,14 @@ public class Main {
 }
 
 class Decorator {
+    // Цвет консольных команд
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+
+
     /**
      * Метод для показа консольного текста с описанием работы программы.
      */
@@ -39,9 +47,9 @@ class Decorator {
      */
     void showCommandsMenu() {
         System.out.println("Команды управления программой:");
-        System.out.println("-- /inc - увеличение счётчика на 1;");
-        System.out.println("-- /reset - сброс счётчика до 0.");
-        System.out.println("-- /stop - завершить работу программы.");
+        System.out.println("-- " + ANSI_YELLOW + "/inc" + ANSI_RESET + " - увеличение счётчика на 1;");
+        System.out.println("-- " + ANSI_YELLOW + "/reset" + ANSI_RESET + " - сброс счётчика до 0.");
+        System.out.println("-- " + ANSI_YELLOW + "/stop" + ANSI_RESET + " - завершить работу программы.");
         System.out.println("Примечание: команды управления нужно вводить на английской раскладке маленькими буквами и указанием знака \"/\" в начале команды.");
         System.out.print("Введите команду >>: ");
     }
@@ -51,20 +59,26 @@ class Decorator {
      */
     void author() {
         System.out.println();
-        System.out.println("/" + "*".repeat(23) + "/");
-        System.out.println("/******Te3Ka_PaynE******/");
-        System.out.println("/*79811131773@yandex.ru*/");
-        System.out.println("/" + "*".repeat(23) + "/");
+        System.out.println(ANSI_YELLOW + "/" + "*".repeat(23) + "/");
+        System.out.println("/******" + ANSI_PURPLE + "Te3Ka_PaynE" + ANSI_YELLOW + "******/");
+        System.out.println("/*" + ANSI_PURPLE + "79811131773@yandex.ru" + ANSI_YELLOW + "*/");
+        System.out.println("/" + "*".repeat(23) + "/" + ANSI_RESET);
     }
 
+    /**
+     * Метод для отображения текущего значения итератора в консоли.
+     * @param iterator - счётчик
+     */
     void showIterator(Iterator iterator) {
-        System.out.println("Текущее значение счётчика: " + iterator.getIterator());
+        System.out.println("Текущее значение счётчика: " + Decorator.ANSI_RED + iterator.getIterator() + Decorator.ANSI_RESET);
     }
 }
 
 class Logic implements Serializable {
-    private final long serialVersionUID = 1L;
-    final String FILE_PATH = "iter.ser";
+    @Serial
+    private static final long serialVersionUID = 1L; // Серийная версия интерфейса для сохранения файла
+
+    final String FILE_PATH = "iter.ser"; // Путь к файлу
 
     // Константы команд для управления программой через консоль.
     final String PLUS_ITERATOR = "/inc";
@@ -90,17 +104,17 @@ class Logic implements Serializable {
             userInput = scanner.nextLine();
 
 
-            if (userInput.equals(PLUS_ITERATOR))
-                plusIterator(iterator);
-            else if (userInput.equals(RESET_ITERATOR))
-                resetIterator(iterator);
-            else if (userInput.equals(STOP_ITERATOR)) {
-                decorator.showIterator(iterator);
-                saveIterator(iterator);
-                System.out.println("Завершаю работу");
-                return;
-            } else
-                System.out.println("Введена неверная команда.");
+            switch (userInput) {
+                case PLUS_ITERATOR -> plusIterator(iterator);
+                case RESET_ITERATOR -> resetIterator(iterator);
+                case STOP_ITERATOR -> {
+                    decorator.showIterator(iterator);
+                    saveIterator(iterator);
+                    System.out.println(Decorator.ANSI_GREEN + "Завершаю работу" + Decorator.ANSI_RESET);
+                    return;
+                }
+                default -> System.out.println(Decorator.ANSI_RED + "Введена неверная команда!" + Decorator.ANSI_RESET);
+            }
             decorator.showIterator(iterator);
         }
 
@@ -108,7 +122,6 @@ class Logic implements Serializable {
 
     /**
      * Метод для загрузки значения итератора из файла.
-     * Пока заглушка.
      * @param iterator - счётчик
      */
     void loadIterator(Iterator iterator) throws IOException, ClassNotFoundException {
@@ -117,12 +130,11 @@ class Logic implements Serializable {
 
         iterator.setIterator((Integer) objectInputStream.readObject());
 
-        System.out.println("Счётчик загружен, значение: " + iterator.getIterator());
+        System.out.println("Счётчик загружен, значение: " + Decorator.ANSI_RED + iterator.getIterator() + Decorator.ANSI_RESET);
     }
 
     /**
      * Метод сохранения значения счётчика в файл.
-     * Пока заглушка.
      * @param iterator - счётчик
      */
     void saveIterator(Iterator iterator) throws IOException {
@@ -133,10 +145,18 @@ class Logic implements Serializable {
         objectOutputStream.close();
     }
 
+    /**
+     * Метод для увеличения счётчика на единицу
+     * @param iterator - счётчик
+     */
     void plusIterator(Iterator iterator) {
         iterator.setIterator(iterator.getIterator() + 1);
     }
 
+    /**
+     * Метод для сброса счётчика до нуля.
+     * @param iterator - счётчик
+     */
     void resetIterator(Iterator iterator) {
         iterator.setIterator(0);
     }
