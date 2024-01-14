@@ -162,6 +162,7 @@ class Logic implements Serializable {
      * @param iterator - счётчик
      */
     void plusIterator(Iterator iterator) {
+        System.out.println(Decorator.ANSI_GREEN + "Счётчик увеличен!" + Decorator.ANSI_RESET);
         iterator.setIterator(iterator.getIterator() + 1);
     }
 
@@ -170,6 +171,7 @@ class Logic implements Serializable {
      * @param iterator - счётчик
      */
     void resetIterator(Iterator iterator) {
+        System.out.println(Decorator.ANSI_GREEN + "Счётчик сброшен!" + Decorator.ANSI_RESET);
         iterator.setIterator(0);
     }
 }
