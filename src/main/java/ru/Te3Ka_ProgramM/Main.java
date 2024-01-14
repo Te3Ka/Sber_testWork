@@ -1,12 +1,13 @@
+//***********************//
+//****Program author*****//
+//******Te3Ka_PaynE******//
+//*79811131773@yandex.ru*//
+//***********************//
+
 package ru.Te3Ka_ProgramM;
 
 import java.io.*;
 import java.util.Scanner;
-
-//***********************//
-//******Te3Ka_PaynE******//
-//*79811131773@yandex.ru*//
-//***********************//
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -23,6 +24,11 @@ public class Main {
     }
 }
 
+/**
+ * Класс декоратора.
+ * Отображает большую часть текста в консоли.
+ * Также содержит константы для цвета текста в консоли.
+ */
 class Decorator {
     // Цвет консольных команд
     public static final String ANSI_RESET = "\u001B[0m";
@@ -47,22 +53,11 @@ class Decorator {
      */
     void showCommandsMenu() {
         System.out.println("Команды управления программой:");
-        System.out.println("-- " + ANSI_YELLOW + "/inc" + ANSI_RESET + " - увеличение счётчика на 1;");
-        System.out.println("-- " + ANSI_YELLOW + "/reset" + ANSI_RESET + " - сброс счётчика до 0.");
-        System.out.println("-- " + ANSI_YELLOW + "/stop" + ANSI_RESET + " - завершить работу программы.");
+        System.out.println("-- " + ANSI_YELLOW + Logic.PLUS_ITERATOR + ANSI_RESET + " - увеличение счётчика на 1;");
+        System.out.println("-- " + ANSI_YELLOW + Logic.RESET_ITERATOR + ANSI_RESET + " - сброс счётчика до 0.");
+        System.out.println("-- " + ANSI_YELLOW + Logic.STOP_ITERATOR + ANSI_RESET + " - завершить работу программы.");
         System.out.println("Примечание: команды управления нужно вводить на английской раскладке маленькими буквами и указанием знака \"/\" в начале команды.");
         System.out.print("Введите команду >>: ");
-    }
-
-    /**
-     * Метод для показа консольного текста автора программы.
-     */
-    void author() {
-        System.out.println();
-        System.out.println(ANSI_YELLOW + "/" + "*".repeat(23) + "/");
-        System.out.println("/******" + ANSI_PURPLE + "Te3Ka_PaynE" + ANSI_YELLOW + "******/");
-        System.out.println("/*" + ANSI_PURPLE + "79811131773@yandex.ru" + ANSI_YELLOW + "*/");
-        System.out.println("/" + "*".repeat(23) + "/" + ANSI_RESET);
     }
 
     /**
@@ -72,8 +67,26 @@ class Decorator {
     void showIterator(Iterator iterator) {
         System.out.println("Текущее значение счётчика: " + Decorator.ANSI_RED + iterator.getIterator() + Decorator.ANSI_RESET);
     }
+
+    /**
+     * Метод для показа консольного текста автора программы.
+     */
+    void author() {
+        System.out.println();
+        System.out.println(ANSI_YELLOW + "/" + "*".repeat(23) + "/");
+        System.out.println("/****" + ANSI_PURPLE + "Program author" + ANSI_YELLOW + "*****/");
+        System.out.println("/******" + ANSI_PURPLE + "Te3Ka_PaynE" + ANSI_YELLOW + "******/");
+        System.out.println("/*" + ANSI_PURPLE + "79811131773@yandex.ru" + ANSI_YELLOW + "*/");
+        System.out.println("/" + "*".repeat(23) + "/" + ANSI_RESET);
+    }
 }
 
+/**
+ * Класс логики программы.
+ * Содержит в себе основные элементы управления программой
+ * Методы Загрузки и Сохранение счётчика.
+ * Метод основного меню программы
+ */
 class Logic implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L; // Серийная версия интерфейса для сохранения файла
@@ -81,9 +94,9 @@ class Logic implements Serializable {
     final String FILE_PATH = "iter.ser"; // Путь к файлу
 
     // Константы команд для управления программой через консоль.
-    final String PLUS_ITERATOR = "/inc";
-    final String RESET_ITERATOR = "/reset";
-    final String STOP_ITERATOR = "/stop";
+    public static final String PLUS_ITERATOR = "/inc";
+    public static final String RESET_ITERATOR = "/reset";
+    public static final String STOP_ITERATOR = "/stop";
 
     /**
      * Основной метод управления программой.
@@ -102,7 +115,6 @@ class Logic implements Serializable {
             scanner.nextLine();
             decorator.showCommandsMenu();
             userInput = scanner.nextLine();
-
 
             switch (userInput) {
                 case PLUS_ITERATOR -> plusIterator(iterator);

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="iter.ser&#10;Сам файл итератора">
+    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="Decoration&#10;Добавлены декоративные цвета текста для консоли.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iter.ser" beforeDir="false" afterPath="$PROJECT_DIR$/iter.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705229005517</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Decoration&#10;Добавлены декоративные цвета текста для консоли.">
+      <option name="closed" value="true" />
+      <created>1705229982636</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705229982636</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -110,6 +117,7 @@
     <MESSAGE value="Main Menu program and Logic classes&#10;Добавлено текстовое меню программы.&#10;Сделана логика увеличения счётчика.&#10;Сделан сброс счётичка.&#10;Сделан выход из программы." />
     <MESSAGE value="Save and Load iterator&#10;Добавлены сохранение и загрузка итератора." />
     <MESSAGE value="iter.ser&#10;Сам файл итератора" />
-    <option name="LAST_COMMIT_MESSAGE" value="iter.ser&#10;Сам файл итератора" />
+    <MESSAGE value="Decoration&#10;Добавлены декоративные цвета текста для консоли." />
+    <option name="LAST_COMMIT_MESSAGE" value="Decoration&#10;Добавлены декоративные цвета текста для консоли." />
   </component>
 </project>
