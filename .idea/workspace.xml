@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="Добавлено описание задания в README.md.&#10;&#10;Удалён стартовый код из Main.java">
+    <list default="true" id="377913f0-d950-45b9-b7b3-0c506ee731a9" name="Changes" comment="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Te3Ka_ProgramM/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -59,11 +59,20 @@
       <option name="project" value="LOCAL" />
       <updated>1705223366052</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы.">
+      <option name="closed" value="true" />
+      <created>1705224168470</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705224168470</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлено описание задания в README.md.&#10;&#10;Удалён стартовый код из Main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено описание задания в README.md.&#10;&#10;Удалён стартовый код из Main.java" />
+    <MESSAGE value="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы." />
+    <option name="LAST_COMMIT_MESSAGE" value="Созданы константы для управления программой.&#10;Создана приватная переменная счётчика и get и set к ней.&#10;Тестовый запуск для проверки работоспособности программы." />
   </component>
 </project>
