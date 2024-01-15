@@ -137,12 +137,20 @@ class Logic implements Serializable {
      * @param iterator - счётчик
      */
     void loadIterator(Iterator iterator) throws IOException, ClassNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        try {
+            FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-        iterator.setIterator((Integer) objectInputStream.readObject());
+            iterator.setIterator((Integer) objectInputStream.readObject());
 
-        System.out.println("Счётчик загружен, значение: " + Decorator.ANSI_RED + iterator.getIterator() + Decorator.ANSI_RESET);
+            System.out.println("Счётчик загружен, значение: " + Decorator.ANSI_RED + iterator.getIterator() + Decorator.ANSI_RESET);
+        } catch (Exception ex) {
+            System.out.println(Decorator.ANSI_RED + "Файл с счётчиком не найден." + Decorator.ANSI_RESET);
+            iterator.setIterator(0);
+            saveIterator(iterator);
+            System.out.println(Decorator.ANSI_GREEN + "Создан новый файл." + Decorator.ANSI_RESET);
+            System.out.println("Текущее значение счётчика: " + Decorator.ANSI_RED + iterator.getIterator() + Decorator.ANSI_RESET);
+        }
     }
 
     /**
